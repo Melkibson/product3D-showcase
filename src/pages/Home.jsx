@@ -4,15 +4,31 @@ import { useSnapshot } from "valtio";
 import {
     headTextAnimation,
     headContentAnimation,
-    headContainerAnimation
+    headContainerAnimation,
+    slideAnimation
 } from '../config/motion'
 import state from "../store/index.js";
+import { Image } from "../components/atoms/image/header"
+import { Headline } from "../components/molecules/header/index.js";
 
 const Home = () => {
+    const snap = useSnapshot(state);
+
     return (
-        <div>
-            <div>Home</div>
-        </div>
+        <AnimatePresence>
+            {snap.intro && (
+                <motion.section className="home" {...slideAnimation('left')}>
+                    <motion.header className="" {...slideAnimation('down')}>
+                        <Image
+                            src="/threejs.png"
+                            alt="logo"
+                        />
+                    </motion.header>
+                    <Headline/>
+                </motion.section>
+            )}
+        </AnimatePresence>
+
     );
 }
 
