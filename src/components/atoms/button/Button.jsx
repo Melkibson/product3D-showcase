@@ -1,5 +1,5 @@
 import React from 'react'
-import state from "../../../../store/index.js";
+import state from "../../../store/index.js";
 import {useSnapshot} from "valtio";
 
 const Button = ({ type, title, styles, handleClick}) => {

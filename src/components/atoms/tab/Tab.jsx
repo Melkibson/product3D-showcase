@@ -1,0 +1,19 @@
+import React from 'react'
+
+const Tab = ({tab, handleClick, isFilterTab, isActiveTab}) => {
+    return (
+        <div
+            key={tab.name}
+            className={`tab-btn `}
+            onClick={handleClick}
+        >
+            <img
+                src={tab.icon}
+                alt={tab.name}
+                className={`${isFilterTab ? 'w-2/3 h-2/3' : 'w-11/12 h-11/12 object-contain'}`}
+            />
+        </div>
+    );
+}
+
+export default Tab
