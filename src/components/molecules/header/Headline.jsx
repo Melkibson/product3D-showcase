@@ -9,7 +9,7 @@ import {
     headContainerAnimation,
 } from '../../../config/motion'
 import state from "../../../store/index.js";
-import {Button} from "../../atoms/button/header/index.js";
+import {Button} from "../../atoms/button/index.js";
 
 const Headline = () => {
     return (
